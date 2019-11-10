@@ -1,16 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TweetComponent } from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TweetComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
