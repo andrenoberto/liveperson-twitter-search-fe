@@ -9,21 +9,25 @@ import { Tweet } from 'src/app/shared/models';
 export class HomeComponent implements OnInit {
   tweets: Tweet[] = [
     {
-      text: '$LPSN\'s 10-day Moving Average crossed above its 50-day Moving Average on October 17, 2019. View odds for this and other indicators: https://tickeron.com/go/904880 #LivePerson #stockmarket #stock #technicalanalysis #money #trading #investing #daytrading #news #today',
-      createdAt: '25 min',
+      text: "$LPSN's 10-day Moving Average crossed above its 50-day Moving Average on October 17, 2019. View odds for this and o… https://t.co/5trOv30Yjv",
+      created_at: "Wed Nov 06 18:33:22 +0000 2019",
       user: {
-        name: 'Andre Noberto',
-        screen_name: 'andrenoberto',
-        profile_image_url_https: 'https://scontent.fcpq1-1.fna.fbcdn.net/v/t1.0-9/40023140_1843052485778344_6664516077646512128_n.jpg?_nc_cat=101&_nc_oc=AQnOkDmOa4iU0c0Sv6SEyonkfygEmOBl_jp0OCZE46cmoZdgx_MGERbblgSRvVmb8j8&_nc_ht=scontent.fcpq1-1.fna&oh=eced08002d941719f5731b263934bd1f&oe=5E526A44',
+        id: 374729426,
+        name: "Tickeron",
+        screen_name: "Tickeron",
+        profile_banner_url: "https://pbs.twimg.com/profile_banners/374729426/1558729167",
+        profile_image_url_https: "https://pbs.twimg.com/profile_images/881978009279881216/7fnZZ_Pl_normal.jpg"
       },
     },
     {
-      text: '$LPSN\'s 10-day Moving Average crossed above its 50-day Moving Average on October 17, 2019. View odds for this and other indicators: https://tickeron.com/go/904880 #LivePerson #stockmarket #stock #technicalanalysis #money #trading #investing #daytrading #news #today',
-      createdAt: '25 min',
+      text: "LivePerson, Inc.: Unusual volume for LivePerson, Inc. stock. #LivePerson #MarketScreener https://t.co/tYBO1lVNeW https://t.co/HOqtf1ag34",
+      created_at: "Wed Nov 06 14:54:12 +0000 2019",
       user: {
-        name: 'Andre Noberto',
-        screen_name: 'andrenoberto',
-        profile_image_url_https: 'https://scontent.fcpq1-1.fna.fbcdn.net/v/t1.0-9/40023140_1843052485778344_6664516077646512128_n.jpg?_nc_cat=101&_nc_oc=AQnOkDmOa4iU0c0Sv6SEyonkfygEmOBl_jp0OCZE46cmoZdgx_MGERbblgSRvVmb8j8&_nc_ht=scontent.fcpq1-1.fna&oh=eced08002d941719f5731b263934bd1f&oe=5E526A44',
+        id: 1649782484,
+        name: "MarketScreener Technical Alerts",
+        screen_name: "MrktScreener_TA",
+        profile_banner_url: "https://pbs.twimg.com/profile_banners/1649782484/1550586829",
+        profile_image_url_https: "https://pbs.twimg.com/profile_images/1097867154677030913/IbcUfKJs_normal.png"
       },
     },
   ];
