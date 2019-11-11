@@ -5,6 +5,6 @@ export class Tweet {
   text?: string;
   truncated?: boolean;
   user?: User
-  created_at?: string;
+  timestamp?: string;
 }
 

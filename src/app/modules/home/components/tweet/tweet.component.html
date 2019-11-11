@@ -3,11 +3,11 @@
 
     <div class="meta">
       <img
-        [src]="tweet?.user?.profile_image_url_https"
+        [src]="tweet?.user?.profileImage"
         alt="" class="profile">
       <div class="details">
         <p class="name">{{tweet?.user?.name}}</p>
-        <p class="username">@{{tweet?.user?.screen_name}}</p>
+        <p class="username">@{{tweet?.user?.screenName}}</p>
       </div>
     </div>
 
@@ -15,5 +15,5 @@
   </div>
 
   <p class="message">{{tweet?.text}}</p>
-  <p class="timestamp">{{tweet?.created_at}}</p>
+  <p class="timestamp">{{tweet?.timestamp}}</p>
 </div>
