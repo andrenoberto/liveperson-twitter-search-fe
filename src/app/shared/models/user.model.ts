@@ -1,7 +1,7 @@
 export class User {
-  id?: Number;
+  id?: number;
   name?: String;
-  screen_name?: String;
-  profile_banner_url?: String;
-  profile_image_url_https?: String;
+  screen_name?: string;
+  profile_banner_url?: string;
+  profile_image_url_https?: string;
 }
