@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SearchTweetsResponse } from 'src/app/shared/models';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class TweetService {
 
   constructor(private http: HttpClient) { }
 
-  getTweets() {
+  searchTweets(): Observable<SearchTweetsResponse> {
     return this.http.get(this.url);
   }
 }

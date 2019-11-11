@@ -1,5 +1,5 @@
-<div class="card">
-  <div class="header">
+<article class="card" [@fadeInOut]>
+  <header>
 
     <div class="meta">
       <img
@@ -12,8 +12,8 @@
     </div>
 
     <fa-icon [icon]="faTwitter" [styles]="{'color': '#0095eb'}"></fa-icon>
-  </div>
+  </header>
 
   <p class="message">{{tweet?.text}}</p>
   <p class="timestamp">{{tweet?.timestamp}}</p>
-</div>
+</article>
