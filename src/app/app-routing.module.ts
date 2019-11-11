@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TweetComponent } from './tweet/tweet.component';
-
-
 const routes: Routes = [
-  { path: '', component: TweetComponent },
+  { path: '', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="header">
+
+    <div class="meta">
+      <img
+        [src]="tweet?.user?.profile_image_url_https"
+        alt="" class="profile">
+      <div class="details">
+        <p class="name">{{tweet?.user?.name}}</p>
+        <p class="username">@{{tweet?.user?.screen_name}}</p>
+      </div>
+    </div>
+
+    <fa-icon [icon]="faTwitter" [styles]="{'color': '#0095eb'}"></fa-icon>
+  </div>
+
+  <p class="message">{{tweet?.text}}</p>
+  <p class="timestamp">{{tweet?.createdAt}}</p>
+</div>
