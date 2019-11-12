@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { faFacebookF, faTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faLinkedinIn, faTwitter, faYoutube, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
 import { faLivePerson } from 'src/app/shared/icons';
 import { Tweet, SearchTweetsResponse, LocalIconDefinition } from 'src/app/shared/models';
@@ -11,8 +11,10 @@ import { TweetService } from 'src/app/core/http/tweet.service';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  faTwitter: IconDefinition = faTwitter;
   faFacebookF: IconDefinition = faFacebookF;
+  faLinkedinIn: IconDefinition = faLinkedinIn;
+  faTwitter: IconDefinition = faTwitter;
+  faYoutube: IconDefinition = faYoutube;
   faLivePerson: LocalIconDefinition = faLivePerson;
   nextResults: string;
   tweets: Tweet[] = [];
@@ -48,10 +50,10 @@ export class HomeComponent implements OnInit {
     if (false) {
       console.log('Fim da página')
       this.tweetService.searchTweets(this.nextResults)
-      .subscribe((response: SearchTweetsResponse) => {
-        this.nextResults = response.searchMetadata.nextResults;
-        this.tweets = response.tweets;
-      });
+        .subscribe((response: SearchTweetsResponse) => {
+          this.nextResults = response.searchMetadata.nextResults;
+          this.tweets = response.tweets;
+        });
     }
   }
 }
