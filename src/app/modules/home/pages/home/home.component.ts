@@ -1,7 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
-import { Tweet, SearchTweetsResponse } from 'src/app/shared/models';
+import { faLivePerson } from 'src/app/shared/icons';
+import { ITweet, ISearchTweetsResponse, ILocalIconDefinition } from 'src/app/shared/models';
 import { TweetService } from 'src/app/core/http/tweet.service';
 
 @Component({
@@ -10,16 +11,17 @@ import { TweetService } from 'src/app/core/http/tweet.service';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  faTwitter = faTwitter;
-  faFacebookF = faFacebookF;
+  faTwitter: IconDefinition = faTwitter;
+  faFacebookF: IconDefinition = faFacebookF;
+  faLivePerson: ILocalIconDefinition = faLivePerson;
   nextResults: string;
-  tweets: Tweet[] = [];
+  tweets: ITweet[] = [];
 
   constructor(private tweetService: TweetService) { }
 
   ngOnInit() {
     this.tweetService.searchTweets()
-      .subscribe((response: SearchTweetsResponse) => {
+      .subscribe((response: ISearchTweetsResponse) => {
         this.nextResults = response.searchMetadata.nextResults;
         this.tweets = response.tweets;
       });
@@ -46,7 +48,7 @@ export class HomeComponent implements OnInit {
     if (false) {
       console.log('Fim da página')
       this.tweetService.searchTweets(this.nextResults)
-      .subscribe((response: SearchTweetsResponse) => {
+      .subscribe((response: ISearchTweetsResponse) => {
         this.nextResults = response.searchMetadata.nextResults;
         this.tweets = response.tweets;
       });

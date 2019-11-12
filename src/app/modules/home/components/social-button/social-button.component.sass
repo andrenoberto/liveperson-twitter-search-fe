@@ -1,0 +1,68 @@
+.btn,
+.btn:before,
+.btn .fa
+  transition: all 0.3s
+  transition-timing-function: cubic-bezier(.72, 0, .15, 1)
+
+.btn:before
+  top: 90%
+  left: -110%
+
+.btn .fa
+  transform: scale(0.8)
+
+.btn.facebook:before
+  background-color: #3b5998
+
+.btn.facebook .fa
+  color: #3b5998
+
+.btn.liveperson:before
+  background-color: #ff9a31
+
+.btn.liveperson .fa
+  color: #ed783d
+
+.btn.twitter:before
+  background-color: #3cf
+
+.btn.twitter .fa
+  color: #3cf
+
+.btn:focus:before
+.btn:hover:before
+  top: -25%
+  left: -25%
+  z-index: 1
+
+.btn:focus .fa
+.btn:hover .fa
+  color: #fff !important
+  transform: scale(2)
+  position: relative
+  z-index: 2
+
+.btn
+  display: inline-block
+  background-color: #fff
+  width: 90px
+  height: 90px
+  line-height: 90px
+  margin: 0 10px
+  text-align: center
+  position: relative
+  overflow: hidden
+  border-radius: 10px
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1)
+  opacity: 0.99
+
+.btn:before
+  content: ''
+  width: 150%
+  height: 150%
+  position: absolute
+  transform: rotate(45deg)
+
+.btn .fa
+  font-size: 38px
+  vertical-align: middle

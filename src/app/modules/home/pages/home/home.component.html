@@ -2,15 +2,9 @@
   <button (click)="reload()">Reload</button>
 
   <div class="social-btns">
-    <a href="#1192856387904299008" class="btn twitter">
-      <fa-icon class="fa fa-twitter" [icon]="faTwitter"></fa-icon>
-    </a>
-    <a href="#1192856387904299008" class="btn facebook">
-      <fa-icon class="fa fa-twitter" [icon]="faFacebookF"></fa-icon>
-    </a>
-    <a href="#1192856387904299008" class="btn liveperson">
-      <fa-icon class="fa fa-twitter" [icon]="faTwitter"></fa-icon>
-    </a>
+    <app-social-button variant="twitter" target="_blank" [icon]="faTwitter"></app-social-button>
+    <app-social-button variant="facebook" target="_blank" [icon]="faFacebookF"></app-social-button>
+    <app-social-button variant="liveperson" target="_blank" [icon]="faLivePerson"></app-social-button>
   </div>
 
   <app-tweet *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet>
