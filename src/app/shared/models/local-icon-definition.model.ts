@@ -1,4 +1,4 @@
-export interface ILocalIconDefinition {
+export interface LocalIconDefinition {
   prefix: string;
   iconName: string;
   icon: [

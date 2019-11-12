@@ -1,4 +1,4 @@
-export interface ISearchMetadata {
+export interface SearchMetadata {
   nextResults: string;
   count: number;
 }

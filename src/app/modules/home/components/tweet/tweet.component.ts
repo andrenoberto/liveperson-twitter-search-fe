@@ -2,7 +2,7 @@ import { Component, Input, HostListener } from '@angular/core';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { fadeIn } from 'src/app/shared/animations';
-import { ITweet } from 'src/app/shared/models';
+import { Tweet } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-tweet',
@@ -13,7 +13,7 @@ import { ITweet } from 'src/app/shared/models';
 export class TweetComponent {
   faTwitter = faTwitter;
 
-  @Input() tweet: ITweet;
+  @Input() tweet: Tweet;
 
   @HostListener('click')
   onClick() {

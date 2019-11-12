@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-import { ILocalIconDefinition } from 'src/app/shared/models';
+import { LocalIconDefinition } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-social-button',
@@ -12,5 +12,5 @@ export class SocialButtonComponent {
   @Input() href: string;
   @Input() target: string;
   @Input() variant: string;
-  @Input() icon: IconDefinition | ILocalIconDefinition;
+  @Input() icon: IconDefinition | LocalIconDefinition;
 }
