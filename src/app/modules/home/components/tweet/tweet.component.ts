@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { fadeIn } from 'src/app/shared/animations';
@@ -14,4 +14,9 @@ export class TweetComponent {
   faTwitter = faTwitter;
 
   @Input() tweet: Tweet;
+
+  @HostListener('click')
+  onClick() {
+    console.log('Clicou no tweet', this.tweet.id);
+ }
 }

@@ -1,10 +1,8 @@
 import { User } from './user.model';
 
 export class Tweet {
-  id?: number;
+  id?: string;
   text?: string;
-  truncated?: boolean;
   user?: User
-  timestamp?: string;
+  createdAt?: string;
 }
-

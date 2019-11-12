@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { Tweet, SearchTweetsResponse } from 'src/app/shared/models';
 import { TweetService } from 'src/app/core/http/tweet.service';
@@ -9,6 +10,8 @@ import { TweetService } from 'src/app/core/http/tweet.service';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
+  faTwitter = faTwitter;
+  faFacebookF = faFacebookF;
   nextResults: string;
   tweets: Tweet[] = [];
 
@@ -30,5 +33,23 @@ export class HomeComponent implements OnInit {
 
   setTweets(tweets) {
     this.tweets = tweets;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  doSomething(event) {
+    console.log(event.target);
+    console.log(event.target.offsetHeight, event.target.scrollTop, event.target.scrollHeight)
+    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
+      console.log("End");
+    }
+
+    if (false) {
+      console.log('Fim da página')
+      this.tweetService.searchTweets(this.nextResults)
+      .subscribe((response: SearchTweetsResponse) => {
+        this.nextResults = response.searchMetadata.nextResults;
+        this.tweets = response.tweets;
+      });
+    }
   }
 }

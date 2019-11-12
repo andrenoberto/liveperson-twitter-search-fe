@@ -1,3 +1,17 @@
-<button (click)="reload()">Reload</button>
+<div class="container">
+  <button (click)="reload()">Reload</button>
 
-<app-tweet *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet>
+  <div class="social-btns">
+    <a href="#1192856387904299008" class="btn twitter">
+      <fa-icon class="fa fa-twitter" [icon]="faTwitter"></fa-icon>
+    </a>
+    <a href="#1192856387904299008" class="btn facebook">
+      <fa-icon class="fa fa-twitter" [icon]="faFacebookF"></fa-icon>
+    </a>
+    <a href="#1192856387904299008" class="btn liveperson">
+      <fa-icon class="fa fa-twitter" [icon]="faTwitter"></fa-icon>
+    </a>
+  </div>
+
+  <app-tweet *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet>
+</div>

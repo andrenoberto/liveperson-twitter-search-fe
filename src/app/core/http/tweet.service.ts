@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TweetService {
-  private url: string = 'http://localhost:3000/api/v1/tweets?q=%23liveperson';
+  private url: string = 'http://localhost:3000/api/v1/tweets';
 
   constructor(private http: HttpClient) { }
 
-  searchTweets(): Observable<SearchTweetsResponse> {
-    return this.http.get(this.url);
+  searchTweets(queryString: string = '?q=%23liveperson'): Observable<SearchTweetsResponse> {
+    return this.http.get(`${this.url}${queryString}`);
   }
 }
