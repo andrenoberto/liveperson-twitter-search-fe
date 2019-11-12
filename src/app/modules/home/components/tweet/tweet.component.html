@@ -1,6 +1,5 @@
 <article class="card" [@fadeInOut] id={{tweet.id}}>
   <header>
-
     <div class="meta">
       <img
         [src]="tweet?.user?.profileImage"
@@ -10,10 +9,8 @@
         <p class="username">@{{tweet?.user?.screenName}}</p>
       </div>
     </div>
-
     <fa-icon [icon]="faTwitter" [styles]="{'color': '#0095eb'}"></fa-icon>
   </header>
-
   <p class="message">{{tweet?.text}}</p>
   <p class="timestamp">{{tweet?.createdAt}}</p>
 </article>
