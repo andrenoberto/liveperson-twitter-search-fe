@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TweetComponent } from './components/tweet/tweet.component';
 import { SocialButtonComponent } from './components/social-button/social-button.component';
 import { SocialButtonsComponent } from './components/social-buttons/social-buttons.component';
+import { RelativeDatePipe } from 'src/app/shared/pipes';
 
 const components = [
   HomeComponent,
@@ -18,6 +19,7 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
+    RelativeDatePipe,
   ],
   imports: [
     CommonModule,

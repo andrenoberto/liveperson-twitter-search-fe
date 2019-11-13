@@ -1,6 +1,6 @@
-import { ILocalIconDefinition } from '../models';
+import { LocalIconDefinition } from '../models';
 
-export const faLivePerson: ILocalIconDefinition = {
+export const faLivePerson: LocalIconDefinition = {
   prefix: 'fab',
   iconName: 'liveperson',
   icon: [
