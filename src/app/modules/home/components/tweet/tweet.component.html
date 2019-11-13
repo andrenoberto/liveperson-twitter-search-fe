@@ -12,5 +12,5 @@
     <fa-icon [icon]="faTwitter" [styles]="{'color': '#0095eb'}"></fa-icon>
   </header>
   <p class="message">{{tweet?.text}}</p>
-  <p class="timestamp">{{tweet?.timestamp | relativeDate }}</p>
+  <p class="timestamp">{{tweet?.createdAt | relativeDate }}</p>
 </article>
