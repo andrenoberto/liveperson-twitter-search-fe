@@ -38,4 +38,8 @@ export class HomeComponent implements OnInit {
   private isEndOfPage(): boolean {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight;
   }
+
+  trackById(index, item: Tweet): string {
+    return item.id;
+  }
 }
