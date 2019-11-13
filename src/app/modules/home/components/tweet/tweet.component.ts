@@ -17,6 +17,10 @@ export class TweetComponent {
 
   @HostListener('click')
   onClick() {
-    console.log('Clicou no tweet', this.tweet.id);
+    window.open(this.getTweetAddress(), '_blank');
+ }
+
+ getTweetAddress(): string {
+   return `https://twitter.com/i/web/status/${this.tweet.id}`;
  }
 }

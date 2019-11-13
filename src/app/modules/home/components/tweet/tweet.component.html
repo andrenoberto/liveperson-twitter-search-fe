@@ -3,7 +3,7 @@
     <div class="meta">
       <img
         [src]="tweet?.user?.profileImage"
-        alt="" class="profile">
+        [alt]="tweet?.user?.name" class="profile">
       <div class="details">
         <p class="name">{{tweet?.user?.name}}</p>
         <p class="username">@{{tweet?.user?.screenName}}</p>

@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 import { Tweet, SearchTweetsResponse } from 'src/app/shared/models';
 import { TweetService } from 'src/app/core/http/tweet.service';
@@ -22,31 +23,19 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  reload() {
-    const tweets = this.tweets;
-    this.tweets = [];
-    setTimeout(() => this.setTweets(tweets), 100);
-  }
-
-  setTweets(tweets) {
-    this.tweets = tweets;
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  doSomething(event) {
-    console.log(event.target);
-    console.log(event.target.offsetHeight, event.target.scrollTop, event.target.scrollHeight)
-    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
-      console.log("End");
-    }
-
-    if (false) {
-      console.log('Fim da página')
+  @HostListener('window:scroll')
+  doSomething() {
+    if (this.isEndOfPage() && this.nextResults) {
       this.tweetService.searchTweets(this.nextResults)
+      .pipe(take(1))
         .subscribe((response: SearchTweetsResponse) => {
           this.nextResults = response.searchMetadata.nextResults;
           this.tweets = response.tweets;
         });
     }
+  }
+
+  private isEndOfPage(): boolean {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight;
   }
 }
