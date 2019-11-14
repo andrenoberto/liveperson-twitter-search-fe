@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TweetService {
-  private url: string = 'http://localhost:3000/api/v1/tweets';
+  private url = 'http://localhost:3000/api/v1/tweets';
 
   constructor(private http: HttpClient) { }
 

@@ -54,4 +54,31 @@ describe('TweetComponent', () => {
 
     expect(window.open).toHaveBeenCalled();
   });
+
+
+  it('should render a tweet', () => {
+    const tweet = {
+      id: '123456',
+      createdAt: new Date().toDateString(),
+      text: 'LivePerson',
+      user: {
+        id: '123456',
+        name: 'LivePerson',
+        screenName: 'lp',
+        profileImage: '',
+        url: ''
+      },
+    };
+    component.tweet = tweet;
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+
+    const name = compiled.querySelector('p.name').textContent;
+    const screenName = compiled.querySelector('p.username').textContent;
+    const message = compiled.querySelector('p.message').textContent;
+
+    expect(name).toContain(tweet.user.name);
+    expect(screenName).toBe(`@${tweet.user.screenName}`);
+    expect(message).toBe(tweet.text);
+  });
 });
