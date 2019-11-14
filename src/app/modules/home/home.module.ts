@@ -14,7 +14,7 @@ const components = [
   SocialButtonsComponent,
   SocialButtonComponent,
   TweetComponent,
-]
+];
 
 @NgModule({
   declarations: [

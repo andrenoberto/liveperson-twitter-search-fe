@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SocialButtonComponent } from './social-button.component';
 
@@ -8,7 +9,8 @@ describe('SocialButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SocialButtonComponent ]
+      imports: [ FontAwesomeModule ],
+      declarations: [ SocialButtonComponent ],
     })
     .compileComponents();
   }));

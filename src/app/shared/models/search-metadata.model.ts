@@ -1,4 +1,4 @@
 export interface SearchMetadata {
-  nextResults: string;
-  count: number;
+  nextResults?: string;
+  count?: number;
 }

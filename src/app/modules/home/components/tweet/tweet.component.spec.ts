@@ -1,6 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { TweetComponent } from './tweet.component';
+import {TweetComponent} from './tweet.component';
+import {RelativeDatePipe} from '../../../../shared/pipes';
+import {Tweet} from '../../../../shared/models';
 
 describe('TweetComponent', () => {
   let component: TweetComponent;
@@ -8,9 +12,16 @@ describe('TweetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TweetComponent ]
+      imports: [
+        BrowserAnimationsModule,
+        FontAwesomeModule,
+      ],
+      declarations: [
+        TweetComponent,
+        RelativeDatePipe,
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +32,26 @@ describe('TweetComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return a string with the address of tweet\'s page', () => {
+    const tweet: Tweet = {id: '123456'};
+    const app = fixture.debugElement.componentInstance;
+    const expectedAddress = `https://twitter.com/i/web/status/${tweet.id}`;
+
+    app.tweet = tweet;
+    const address = app.getTweetAddress();
+
+    expect(address).toBe(expectedAddress);
+  });
+
+  it('should open a new window with tweet\'s page', () => {
+    component.tweet = {id: '123456'};
+    const app = fixture.debugElement.componentInstance;
+    spyOn(window, 'open').and.stub();
+
+    app.onClick();
+
+    expect(window.open).toHaveBeenCalled();
   });
 });

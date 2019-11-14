@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
 
   constructor(private tweetService: TweetService) { }
 
+  static isEndOfPage(): boolean {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+  }
+
   ngOnInit() {
     this.tweetService.searchTweets()
       .subscribe((response: SearchTweetsResponse) => {
@@ -24,8 +28,8 @@ export class HomeComponent implements OnInit {
   }
 
   @HostListener('window:scroll')
-  doSomething() {
-    if (this.isEndOfPage() && this.nextResults) {
+  loadNextResults() {
+    if (HomeComponent.isEndOfPage() && this.nextResults) {
       this.tweetService.searchTweets(this.nextResults)
       .pipe(take(1))
         .subscribe((response: SearchTweetsResponse) => {
@@ -33,10 +37,6 @@ export class HomeComponent implements OnInit {
           this.tweets = response.tweets;
         });
     }
-  }
-
-  private isEndOfPage(): boolean {
-    return window.innerHeight + window.scrollY >= document.body.offsetHeight;
   }
 
   trackById(index, item: Tweet): string {
