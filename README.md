@@ -7,7 +7,7 @@ LivePerson Twitter Search uses Twitter's API for finding out tweets with #livepe
 
 # Environment Variables
 
-You can change the project's environment variables by editing the following file:
+Our environment variables store values that can be used application wide. You can change the project's environment variables by editing the following file:
 
 For development environment:
 ```
