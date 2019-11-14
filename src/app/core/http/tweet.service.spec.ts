@@ -3,6 +3,7 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 
 import {TweetService} from './tweet.service';
 import {SearchTweetsResponse} from '../../shared/models';
+import {environment} from '../../../environments/environment';
 
 describe('TweetService', () => {
   let injector: TestBed;
@@ -41,7 +42,7 @@ describe('TweetService', () => {
       expect(res).toEqual(response);
     });
 
-    const req = httpMock.expectOne(`http://localhost:3000/api/v1/tweets${queryString}`);
+    const req = httpMock.expectOne(`${environment.apiUrl}/tweets${queryString}`);
     expect(req.request.method).toBe('GET');
     req.flush(response);
   });
