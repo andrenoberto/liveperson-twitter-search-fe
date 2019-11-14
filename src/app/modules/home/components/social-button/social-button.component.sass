@@ -41,21 +41,22 @@
 .btn.youtube .fa
   color: #eb3423
 
-.btn:focus:before
+.btn:focus:before,
 .btn:hover:before
   top: -25%
   left: -25%
   z-index: 1
 
-.btn:focus .fa
+.btn:focus .fa,
 .btn:hover .fa
   color: #fff !important
-  transform: scale(2)
+  transform: scale(1.2)
   position: relative
   z-index: 2
 
 .btn
-  display: block
+  display: flex
+  justify-content: center
   background-color: #fff
   border-radius: 10px
   box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1)

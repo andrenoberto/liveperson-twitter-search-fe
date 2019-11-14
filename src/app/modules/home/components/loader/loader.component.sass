@@ -1,0 +1,26 @@
+.container
+  height: 100px
+  width: auto
+  display: flex
+  transition: all .3s ease
+
+.hide
+  opacity: 0
+  height: 0
+
+  svg
+    display: none
+
+svg
+  position: relative
+  width: 64px
+  height: 64px
+  animation: fly .5s cubic-bezier(.72, 0, .15, 1) infinite alternate
+  opacity: .4
+
+@keyframes fly
+  from
+    top: 0
+
+  to
+    top: 36px

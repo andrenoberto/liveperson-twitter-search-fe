@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './pages/home/home.component';
-import { TweetComponent } from './components/tweet/tweet.component';
-import { SocialButtonComponent } from './components/social-button/social-button.component';
-import { SocialButtonsComponent } from './components/social-buttons/social-buttons.component';
-import { RelativeDatePipe } from 'src/app/shared/pipes';
+import {HomeRoutingModule} from './home-routing.module';
+import {HomeComponent} from './pages/home/home.component';
+import {TweetComponent} from './components/tweet/tweet.component';
+import {SocialButtonComponent} from './components/social-button/social-button.component';
+import {SocialButtonsComponent} from './components/social-buttons/social-buttons.component';
+import {RelativeDatePipe} from 'src/app/shared/pipes';
+import {LoaderComponent} from './components/loader/loader.component';
 
 const components = [
   HomeComponent,
+  LoaderComponent,
   SocialButtonsComponent,
   SocialButtonComponent,
   TweetComponent,
@@ -30,4 +32,5 @@ const components = [
     ...components,
   ],
 })
-export class HomeModule { }
+export class HomeModule {
+}
