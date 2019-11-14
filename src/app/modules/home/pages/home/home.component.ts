@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.tweetService.searchTweets('?q=%23facebook')
+    this.tweetService.searchTweets()
       .pipe(finalize(() => this.loading = false))
       .subscribe((response: SearchTweetsResponse) => {
         this.nextResults = response.searchMetadata.nextResults;
