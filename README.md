@@ -40,13 +40,21 @@ $ npm install
 Once you've set up your back-end environment and get it up and running, start the front-end application by running the following command:
 
 ```sh
-$ npm start
+$ npm run start
 ```
 
 Angular uses port `4200` as default, so you can access it by opening the following address in your web browser:
 
 ```
 http://localhost:4200/
+```
+
+# Running tests
+
+You can run the unit tests by executing the following command:
+
+```sh
+$ npm run test
 ```
 
 # Technical Decisions
