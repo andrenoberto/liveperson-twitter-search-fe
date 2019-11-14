@@ -4,75 +4,79 @@
   transition: all 0.3s
   transition-timing-function: cubic-bezier(.72, 0, .15, 1)
 
-.btn:before
-  top: 90%
-  left: -110%
-
-.btn .fa
-  transform: scale(0.8)
-
-.btn.facebook:before
-  background-color: #3b5998
-
-.btn.facebook .fa
-  color: #3b5998
-
-.btn.linkedin:before
-  background-color: #3076b0
-
-.btn.linkedin .fa
-  color: #3076b0
-
-.btn.liveperson:before
-  background-color: #ec773d
-
-.btn.liveperson .fa
-  color: #ec773d
-
-.btn.twitter:before
-  background-color: #3cf
-
-.btn.twitter .fa
-  color: #3cf
-
-.btn.youtube:before
-  background-color: #eb3423
-
-.btn.youtube .fa
-  color: #eb3423
-
-.btn:hover:before
-  top: -25%
-  left: -25%
-  z-index: 1
-
-.btn:hover .fa
-  color: #fff !important
-  transform: scale(1.1)
-  position: relative
-  z-index: 2
-
 .btn
-  display: flex
-  justify-content: center
+  width: 90px
+  height: 90px
   background-color: #fff
   border-radius: 10px
-  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1)
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, .1)
+  display: flex
+  justify-content: center
   line-height: 90px
   margin: 12px
   position: relative
   overflow: hidden
   text-align: center
-  width: 90px
-  height: 90px
 
-.btn:before
-  content: ''
-  width: 150%
-  height: 150%
-  position: absolute
-  transform: rotate(45deg)
+  &.facebook
+    &:before
+      background: #3b5998
 
-.btn .fa
-  font-size: 38px
-  vertical-align: middle
+    .fa
+      color: #3b5998
+
+  &.linkedin
+    &:before
+      background: #3076b0
+
+    .fa
+      color: #3076b0
+
+  &.liveperson
+    &:before
+      background: #ec773d
+
+    .fa
+      color: #ec773d
+
+  &.twitter
+    &:before
+      background: #3cf
+
+    .fa
+      color: #3cf
+
+  &.youtube
+    &:before
+      background: #eb3423
+
+    .fa
+      color: #eb3423
+
+  .fa
+    transform: scale(0.8)
+    font-size: 38px
+    vertical-align: middle
+
+  &:before
+    width: 150%
+    height: 150%
+    content: ''
+    left: -110%
+    position: absolute
+    top: 90%
+    transform: rotate(45deg)
+
+  &:hover
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, .2)
+
+    .fa
+      color: #fff !important
+      position: relative
+      transform: scale(1.1)
+      z-index: 2
+
+    &:before
+      left: -25%
+      top: -25%
+      z-index: 1
