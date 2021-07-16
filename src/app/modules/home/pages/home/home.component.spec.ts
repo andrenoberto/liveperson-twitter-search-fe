@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {Observable, of} from 'rxjs';
@@ -30,7 +30,7 @@ describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         FontAwesomeModule,
