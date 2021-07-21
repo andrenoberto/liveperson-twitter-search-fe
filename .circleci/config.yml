@@ -1,0 +1,36 @@
+version: 2.1
+
+commands:
+  install_aws_cli:
+    description: Install AWS CLI
+    steps:
+      - run:
+          name: Install AWS cli
+          command: |
+            sudo apt-get install -y python3 python3-pip
+            pip3 install --upgrade pip
+            pip3 install awscli
+
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - install_aws_cli
+      - run:
+          name: Build front-end
+          command: |
+            npm install
+            npm run build:prod
+      - run:
+          name: Deploy front-end
+          command: |
+            npm run build:prod
+            cd dist/liveperson-twitter-search-fe
+            aws s3 sync . s3://liveperson-twitter-search-fe
+
+workflows:
+  default:
+    jobs:
+      - deploy
