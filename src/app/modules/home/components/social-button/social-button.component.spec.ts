@@ -9,7 +9,6 @@ describe('SocialButtonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ FontAwesomeModule ],
       declarations: [ SocialButtonComponent ],
     })
     .compileComponents();
