@@ -14,7 +14,7 @@ commands:
 jobs:
   deploy:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:14.17.3
     steps:
       - checkout
       - install_aws_cli
@@ -26,7 +26,6 @@ jobs:
       - run:
           name: Deploy front-end
           command: |
-            npm run build:prod
             cd dist/liveperson-twitter-search-fe
             aws s3 sync . s3://liveperson-twitter-search-fe
 
